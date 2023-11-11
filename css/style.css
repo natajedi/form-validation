@@ -1,0 +1,217 @@
+/*.body {
+    font-family: Arial, sans-serif; 
+    background-color: #f0f0f0; 
+    margin: 0; 
+    padding: 0; 
+  } */
+   
+  body.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% от высоты окна браузера */
+    margin: 0;
+    padding: 0;
+   }
+
+   .body {
+    font-family: Roboto, sans-serif; 
+    background: #586870;
+    background-color: #f0f0f0; 
+    height: 100vh; /* Исправлено с 100vx на 100vh */
+    box-sizing: border-box;
+    font-family: Poppins, normal;
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: center;
+ }
+
+  .header__links {
+    text-align: center;
+  }
+  
+  /* остальной CSS код */
+    
+  /* .header__links {
+    text-align: right;
+  }*/
+  
+  .header__links a {
+    margin-left: 10px;
+  }
+  
+  /* .header__social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }*/ 
+  
+  .registration-form {
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    border: 16px solid rgb(236, 225, 236);
+    padding: 10px;
+    box-sizing: border-box;
+  }
+   
+  /*.registration-form {
+    margin-bottom: 10px;
+    width: 256px; 
+    height: 51px; 
+    gap: 2px;
+  }*/
+
+  .registration-form__field {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  /*.registration-form__field {
+    margin-bottom: 10px;
+    width: 256px; 
+    height: 51px; 
+    gap: 2px;
+ }*/
+
+  .registration-form__title {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .registration-form__label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .registration-form__required {
+    color: #ff0000;
+  }
+  
+  .registration-form__input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 5px;
+  }
+  
+  .registration-form__input:valid {
+    border-color: #d2d2f7;
+    background-color: rgb(47, 185, 135), 244, 240;
+  }
+  
+  .registration-form__input:invalid {
+    border-color: rgb(216, 195, 227);
+    background-color: rgb(237, 90, 159), 233, 243;
+  }
+  
+  input:focus {
+    background-color: rgb(231, 236, 238);
+   }
+   
+  .registration-form__error {
+    color: red;
+    margin-top: 5px;
+  }
+  
+  /* .registration-form__checkbox {
+    margin-top: 10px;
+  }*/
+  
+  .registration-form__submit {
+    width: 50%; /* Уменьшен наполовину */
+    padding: 10px;
+    background: linear-gradient(180deg, rgba(110, 108, 224, 0.3) 0%, rgba(77, 76, 173, 0.3) 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px; /* Полукруглые края */
+    margin: 5px; /* Отступ от других элементов */
+}
+
+
+  /*.registration-form__submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }*/
+  
+  /* стили для горизонтальной круглой белой кнопки-переключателя
+  .registration-form__toggle {
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    background-color: #ddd;
+    border-radius: 34px;
+    position: relative;
+  }
+  
+  .registration-form__toggle:after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+    transition: 0.4s;
+  }
+  
+  .registration-form__toggle input {
+    display: none;
+  }
+  
+  .registration-form__toggle input:checked + .registration-form__toggle:after {
+    transform: translateX(26px);
+  } */
+
+  .registration-form__checkbox {
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+ }
+ 
+ .registration-form__label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+ }
+ 
+ .checkbox-view {
+  /*display: flex;*/
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff url('images/icon.png') no-repeat center center;
+  background-size: contain;
+  transition: .3s;
+}
+
+ 
+ .checkbox-icon {
+    opacity: 1;
+    transition: .3s;
+ }
+ 
+ .registration-form__checkbox:checked + .checkbox-view {
+  display: flex;
+  background-color: green;
+ }
+ 
+ .registration-form__checkbox:checked + .checkbox-view .checkbox-icon {
+    opacity: 1;
+ }
+ 
