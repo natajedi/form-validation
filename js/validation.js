@@ -30,13 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
           fullNameError.textContent = '';
       }
   
-      if (!password.validity.valid || !/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(password.value)) {
-          passwordError.textContent = 'Пароль должен содержать как минимум 8 символов, включая одну цифру и одну букву';
-          isValid = false;
+      if (!password.validity.valid || !/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&]).{8,}$/.test(password.value)) {
+        passwordError.textContent = 'Пароль должен содержать как минимум 8 символов, включая одну цифру, одну строчную букву, одну прописную букву и один специальный символ';
+        isValid = false;
       } else {
-          passwordError.textContent = '';
+        passwordError.textContent = '';
       }
-  
+    
       if (password.value !== confirmPassword.value) {
           confirmPasswordError.textContent = 'Пароли не совпадают';
           isValid = false;
@@ -58,5 +58,14 @@ document.addEventListener('DOMContentLoaded', function() {
           alert('Вы успешно создали аккаунт');
       }
     });
-  });
+ 
+    agree.addEventListener('change', function() {
+       if (!agree.checked) {
+           agreeError.textContent = 'Вы обязаны подтвердить, что хотите зарегистрироваться';
+       } else {
+           agreeError.textContent = '';
+       }
+    });
+ });
+ 
   
