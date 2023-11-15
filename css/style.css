@@ -59,7 +59,13 @@ input:focus {
 .registration-form__error {
   color: red;
   font-size: 10px;
-  display: none;
+  /*display: none;*/
+}
+
+.form-control__error {
+  color: red;
+  font-size: 10px;
+  /*display: block;*/
 }
 
 .registration-form__submit {
