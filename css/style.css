@@ -59,13 +59,14 @@ input:focus {
 .registration-form__error {
   color: red;
   font-size: 10px;
-  /*display: none;*/
+  white-space: normal;
 }
 
 .form-control__error {
   color: red;
   font-size: 10px;
-  /*display: block;*/
+  white-space: normal;
+  display: none;
 }
 
 .registration-form__submit {
@@ -80,13 +81,6 @@ input:focus {
   display: block;
 }
 
-.registration-form__checkbox {
-  position: absolute;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
 .registration-form__label {
   cursor: pointer;
   display: flex;
@@ -96,33 +90,29 @@ input:focus {
   padding-left: 15px;
   color: rgb(123, 70, 188);
 }
-
+ 
 .checkbox-view {
-  display: none;
+  display: inline-block;
   align-items: center;
   justify-content: center;
   width: 24px;
   height: 24px;
   margin-right: 0px;
-  border: 1px solid #ccc;
   border-radius: 6px;
-  background: #fff url('images/icon.png') no-repeat center center;
+  background: rgb(246, 247, 246) url('/images/check.png') no-repeat center center;
   background-size: contain;
   transition: .3s;
+ }
+ 
+ .registration-form__checkbox {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
-.checkbox-icon {
-  opacity: 1;
-  transition: .3s;
-}
-
-.registration-form__checkbox:checked+.checkbox-view {
-  display: flex;
-  background-color: rgb(249, 249, 249);
-}
-
-.registration-form__checkbox:checked+.checkbox-view .checkbox-icon {
-  opacity: 1;
+.registration-form__checkbox:checked + .checkbox-view {
+  background: url('./images/icon1.png');
 }
 
 @media (min-width: 770px) {
