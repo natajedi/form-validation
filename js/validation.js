@@ -8,29 +8,33 @@ document.addEventListener('DOMContentLoaded', function() {
         let confirmPassword = document.getElementById('confirmPassword');
         let agree = document.getElementById('agree');
 
-        /*let emailError = document.getElementById('emailError');*/
         let emailError = document.createElement('div');
         emailError.className = 'form-control__error';
         email.parentNode.insertBefore(emailError, email.nextSibling);
-        /*let fullNameError = document.getElementById('fullNameError');*/
+        
         let fullNameError = document.createElement('div');
         fullNameError.className = 'form-control__error';
         fullName.parentNode.insertBefore(fullNameError, fullName.nextSibling);
-        /*let passwordError = document.getElementById('passwordError');*/
+        
         let passwordError = document.createElement('div');
         passwordError.className = 'form-control__error';
         password.parentNode.insertBefore(passwordError, password.nextSibling);
-        /*let confirmPasswordError = document.getElementById('confirmPasswordError');*/
+        
         let confirmPasswordError = document.createElement('div');
         confirmPasswordError.className = 'form-control__error';
         confirmPassword.parentNode.insertBefore(confirmPasswordError, confirmPassword.nextSibling);
-        /*let agreeError = document.getElementById('agreeError');*/
+        
         let agreeError = document.createElement('div');
         agreeError.className = 'form-control__error';
         agree.parentNode.insertBefore(agreeError, agree.nextSibling);
 
         let isValid = true;
 
+        if (email.value === '' || fullName.value === '' || password.value === '' || confirmPassword.value === '') {
+            alert('Заполните все поля');
+            isValid = false;
+        }
+        
         if (!email.validity.valid) {
             emailError.textContent = 'Некорректный email';
             emailError.style.display = 'block';
@@ -49,6 +53,15 @@ document.addEventListener('DOMContentLoaded', function() {
             fullNameError.style.display = 'none';
         }
 
+        if (fullName.value.length < 3 || fullName.value.length > 150) {
+            fullNameError.textContent = 'Введите ФИО';
+            fullNameError.style.display = 'block';
+            isValid = false;
+        } else {
+            fullNameError.textContent = '';
+            fullNameError.style.display = 'none';
+        }
+
         if (!password.validity.valid || !/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&]).{8,}$/.test(password.value)) {
             passwordError.textContent = 'Пароль должен содержать как минимум 8 символов, включая одну цифру, одну строчную букву, одну прописную букву и один специальный символ';
             passwordError.style.display = 'block';
@@ -60,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (password.value !== confirmPassword.value) {
             confirmPasswordError.textContent = 'Пароли не совпадают';
-            emailError.style.display = 'block';
+            confirmPasswordError.style.display = 'block';
             isValid = false;
         } else {
             confirmPasswordError.textContent = '';
@@ -86,8 +99,10 @@ document.addEventListener('DOMContentLoaded', function() {
         agree.addEventListener('change', function() {
             if (!agree.checked) {
                 agreeError.textContent = 'Вы обязаны подтвердить, что хотите зарегистрироваться';
+                agreeError.style.display = 'block';
             } else {
                 agreeError.textContent = '';
+                agreeError.style.display = 'none';
             }
         });
     })
