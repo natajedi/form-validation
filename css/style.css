@@ -47,7 +47,7 @@ body.wrapper {
   border-color: rgb(216, 195, 227);
   background-color: rgb(237, 90, 159), 233, 243;
 }
-
+ 
 ::-webkit-input-placeholder { 
   color: rgb(175, 154, 200);
 }
@@ -99,7 +99,7 @@ input:focus {
   height: 24px;
   margin-right: 0px;
   border-radius: 6px;
-  background: rgb(246, 247, 246) url('/images/check.png') no-repeat center center;
+  background: rgb(211, 188, 238) url('/images/icon1.png') no-repeat center center;
   background-size: contain;
   transition: .3s;
  }
@@ -112,7 +112,7 @@ input:focus {
 }
 
 .registration-form__checkbox:checked + .checkbox-view {
-  background: url('./images/icon1.png');
+  background: url('./images/check.png');
 }
 
 @media (min-width: 770px) {
