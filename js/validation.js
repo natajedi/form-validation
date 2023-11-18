@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
             fullNameError.style.display = 'none';
         }
 
+        validatePassword(password, passwordError, isValid);
+
         if (!password.validity.valid || !/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&]).{8,}$/.test(password.value)) {
             passwordError.textContent = 'Пароль должен содержать как минимум 8 символов, включая одну цифру, одну строчную букву, одну прописную букву и один специальный символ';
             passwordError.style.display = 'block';
@@ -106,4 +108,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     })
-});
+
+    function validatePassword(password, passwordError, isValid) {
+        if (!password.validity.valid || !/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&]).{8,}$/.test(password.value)) {
+            passwordError.textContent = 'Пароль должен содержать как минимум 8 символов, включая одну цифру, одну строчную букву, одну прописную букву и один специальный символ';
+            passwordError.style.display = 'block';
+            isValid = false;
+        } else {
+            passwordError.textContent = '';
+            passwordError.style.display = 'none';
+        }
+     }
+ });
